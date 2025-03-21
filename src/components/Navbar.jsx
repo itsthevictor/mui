@@ -10,8 +10,10 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import NAVLINKS from '../../utils/Links';
 import { navbarStyles } from './styles';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <div>
       {' '}
@@ -20,7 +22,11 @@ const Navbar = () => {
         <Divider />
         <List>
           {NAVLINKS.map((item, i) => (
-            <ListItem key={i} disablePadding>
+            <ListItem
+              key={i}
+              disablePadding
+              onClick={() => navigate(item.path)}
+            >
               <ListItemButton>
                 <ListItemIcon sx={navbarStyles.icons}>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.text} sx={navbarStyles.text} />
