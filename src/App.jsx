@@ -20,6 +20,10 @@ function App() {
       element: <Dashboard />,
       children: [
         {
+          index: true,
+          element: <Overview />,
+        },
+        {
           path: 'leads',
           element: <Leads />,
         },
