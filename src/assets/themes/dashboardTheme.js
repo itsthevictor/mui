@@ -8,9 +8,10 @@ export const dashboardTheme = createTheme({
         // Name of the slot
         contained: {
           // Some CSS
-          // backgroundColor: 'red',
+          backgroundColor: '#3a86ff',
+          textTransform: 'capitalize',
         },
-        outlined: { backgroundColor: '#3a86ff' },
+        // outlined: { backgroundColor: '#3a86ff' },
       },
     },
   },
