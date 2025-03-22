@@ -12,6 +12,11 @@ const Login = () => {
     color: '#1c1c1c',
     borderColor: '#1c1c1c',
     fontWeight: 600,
+    '&:hover': {
+      backgroundColor: '#3a86ff',
+      borderColor: '#3a86ff',
+      color: '#f1f1f1',
+    },
   };
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -22,6 +27,12 @@ const Login = () => {
           children='submit'
           variant='outlined'
           sx={buttonStyles}
+        />
+        <MainButton
+          size='small'
+          children='submit'
+          variant='contained'
+          color='primary'
         />
       </Grid>
     </Box>

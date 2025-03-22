@@ -12,12 +12,19 @@ import Programmes from './pages/Programmes';
 import Clients from './pages/Clients';
 import Reports from './pages/Reports';
 import Login from './pages/Login';
+import ProtetedRoute from './pages/ProtetedRoute';
+import { ThemeProvider } from '@mui/material/styles';
+import { dashboardTheme } from './assets/themes/dashboardTheme';
 
 function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Dashboard />,
+      element: (
+        <ProtetedRoute>
+          <Dashboard />
+        </ProtetedRoute>
+      ),
       children: [
         {
           index: true,
@@ -48,7 +55,11 @@ function App() {
       element: <Login />,
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeProvider theme={dashboardTheme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 }
 
 export default App;
