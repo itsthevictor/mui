@@ -6,10 +6,8 @@ import Grid from '@mui/material/Grid2';
 const Dashboard = () => {
   return (
     <main>
-      {' '}
       <Navbar />
       <div className='dashboard-page'>
-        {' '}
         <Outlet />
       </div>
     </main>

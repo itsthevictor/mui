@@ -20,11 +20,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: (
-        <ProtetedRoute>
-          <Dashboard />
-        </ProtetedRoute>
-      ),
+      element: <Dashboard />,
       children: [
         {
           index: true,

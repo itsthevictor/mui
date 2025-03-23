@@ -3,7 +3,8 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 import MainButton from '../components/MainButton';
 import { textFieldClasses } from '@mui/material';
-
+import Badge from '@mui/material/Badge';
+import MailIcon from '@mui/icons-material/Mail';
 const Login = () => {
   const buttonStyles = {
     fontSize: 12,
@@ -22,18 +23,9 @@ const Login = () => {
     <Box sx={{ flexGrow: 1 }}>
       <Grid item size={8}>
         Login
-        <MainButton
-          size='small'
-          children='submit'
-          variant='outlined'
-          sx={buttonStyles}
-        />
-        <MainButton
-          size='small'
-          children='submit'
-          variant='contained'
-          color='primary'
-        />
+        <Badge badgeContent={4} color='primary'>
+          <MailIcon color='action' />
+        </Badge>
       </Grid>
     </Box>
   );
