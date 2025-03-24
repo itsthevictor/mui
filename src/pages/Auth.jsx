@@ -6,7 +6,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import NotificationBell from '../components/NotificationBell';
 
 const Auth = () => {
-  let array = [3234, 2435, 33, 3453, 53, 2, 4352];
+  let array = [1, 2, 34];
   return (
     <Grid2 item xs={8}>
       Auth page <NotificationBell content={array.length} />
