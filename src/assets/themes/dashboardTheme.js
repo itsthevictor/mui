@@ -11,12 +11,12 @@ export const dashboardTheme = createTheme({
           backgroundColor: '#3a86ff',
           textTransform: 'capitalize',
         },
-        // outlined: { backgroundColor: '#3a86ff' },
+        outlined: { textTransform: 'capitalize' },
       },
     },
   },
   palette: {
-    primary: { main: '#1c1c1c' },
+    primary: { main: '#3a86ff' },
   },
   typography: {
     fontFamily: [

@@ -15,6 +15,7 @@ import Login from './pages/Login';
 import ProtetedRoute from './pages/ProtetedRoute';
 import { ThemeProvider } from '@mui/material/styles';
 import { dashboardTheme } from './assets/themes/dashboardTheme';
+import Auth from './pages/Auth';
 
 function App() {
   const router = createBrowserRouter([
@@ -44,6 +45,10 @@ function App() {
         },
         { path: 'admin', element: <Admin /> },
         { path: 'useri', element: <Users /> },
+        {
+          path: 'auth',
+          element: <Auth />,
+        },
       ],
     },
     {
