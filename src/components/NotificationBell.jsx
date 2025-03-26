@@ -4,7 +4,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import BasicMenu from './BasicMenu';
-const NotificationBell = ({ content }) => {
+const NotificationBell = ({ content, menuItems }) => {
   const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -19,11 +19,6 @@ const NotificationBell = ({ content }) => {
   const newNotifications = `You have ${content} new notificatinos`;
   const noNotificaitons = `You don't have new notifications`;
 
-  let menuItems = [
-    { label: 'sdfasdfasdf' },
-    { label: 'sdfasdfasdfasfdgasdf' },
-    { label: 'asdfsthre5yhj65' },
-  ];
   return (
     <>
       <Tooltip title={content ? newNotifications : noNotificaitons}>
