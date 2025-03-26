@@ -16,7 +16,7 @@ export const dashboardTheme = createTheme({
     },
   },
   palette: {
-    primary: { main: '#3a86ff' },
+    primary: { main: '#3a86ff', navText: '#d5f4ff' },
   },
   typography: {
     fontFamily: [
@@ -31,6 +31,21 @@ export const dashboardTheme = createTheme({
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(','),
+    h1: {
+      fontSize: '1.6rem',
+      fontWeight: 500,
+      letterSpacing: '0.5px',
+    },
+    h3: {
+      fontSize: '1.1rem',
+      fontWeight: 500,
+      letterSpacing: '0.5px',
+    },
+    h6: {
+      fontSize: '1rem',
+      fontWeight: 500,
+      letterSpacing: '0.5px',
+    },
   },
   spacing: [4, 8, 12, 16, 28],
 });

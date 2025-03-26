@@ -46,6 +46,10 @@ const Header = ({ title }) => {
         cursor: 'pointer',
       },
     },
+    title: {
+      color: '#d5f4ff',
+      textTransform: 'capitalize',
+    },
     icon: {
       color: '#f1f1f1',
     },
@@ -68,7 +72,9 @@ const Header = ({ title }) => {
       </Box>
 
       <Box sx={headerStyles.middleRow}>
-        <Typography variant='h6'>{title}</Typography>
+        <Typography variant='h6' sx={headerStyles.title}>
+          {title}
+        </Typography>
         <Box>
           <MainButton variant='outlined'>web setup</MainButton>
           <Tooltip title='help'>
