@@ -1,5 +1,11 @@
+import BasicCard from '../components/BasicCard';
+
 const Overview = () => {
-  return <div>Overview</div>;
+  return (
+    <div>
+      <BasicCard />
+    </div>
+  );
 };
 
 export default Overview;

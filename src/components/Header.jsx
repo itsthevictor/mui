@@ -24,9 +24,10 @@ const Header = ({ title }) => {
     topRow: {
       display: 'flex',
       flexDirection: 'row',
-      justifyContent: 'end',
+      justifyContent: 'space-between',
       alignItems: 'center',
       marginButton: '20px',
+      marginLeft: '200px',
       '*': {
         marginRight: '5px',
       },
@@ -35,6 +36,14 @@ const Header = ({ title }) => {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
+      alignItems: 'center',
+      marginButton: '20px',
+      marginLeft: '250px',
+    },
+    actions: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
       alignItems: 'center',
       marginButton: '20px',
       marginLeft: '250px',
@@ -65,16 +74,21 @@ const Header = ({ title }) => {
   return (
     <Box sx={headerStyles.wrapper}>
       <Box sx={headerStyles.topRow}>
-        <Typography sx={headerStyles.link}>go to docs</Typography>
-
-        <NotificationBell content={menuItems.length} menuItems={menuItems} />
-        <Avatar alt='Travis Howard' src='/2.jpg' />
+        <Box>
+          {' '}
+          <Typography variant='h6' sx={headerStyles.title}>
+            {title}
+          </Typography>
+        </Box>
+        <Box sx={headerStyles.actions}>
+          {' '}
+          <Typography sx={headerStyles.link}>go to docs</Typography>
+          <NotificationBell content={menuItems.length} menuItems={menuItems} />
+          <Avatar alt='Travis Howard' src='/2.jpg' />
+        </Box>
       </Box>
 
-      <Box sx={headerStyles.middleRow}>
-        <Typography variant='h6' sx={headerStyles.title}>
-          {title}
-        </Typography>
+      {/* <Box sx={headerStyles.middleRow}>
         <Box>
           <MainButton variant='outlined'>web setup</MainButton>
           <Tooltip title='help'>
@@ -83,7 +97,7 @@ const Header = ({ title }) => {
             </IconButton>
           </Tooltip>
         </Box>
-      </Box>
+      </Box> */}
     </Box>
   );
 };
