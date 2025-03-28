@@ -9,6 +9,8 @@ import {
 import MainButton from '../components/MainButton';
 import NotificationBell from '../components/NotificationBell';
 import HelpIcon from '@mui/icons-material/Help';
+import Logo from './Logo';
+import zIndex from '@mui/material/styles/zIndex';
 
 const Header = ({ title }) => {
   let array = [2134, 23, 423, 42, 34];
@@ -27,7 +29,7 @@ const Header = ({ title }) => {
       justifyContent: 'space-between',
       alignItems: 'center',
       marginButton: '20px',
-      marginLeft: '200px',
+      marginLeft: '185px',
       '*': {
         marginRight: '5px',
       },
@@ -38,7 +40,7 @@ const Header = ({ title }) => {
       justifyContent: 'space-between',
       alignItems: 'center',
       marginButton: '20px',
-      marginLeft: '250px',
+      marginLeft: '50px',
     },
     actions: {
       display: 'flex',
@@ -46,7 +48,7 @@ const Header = ({ title }) => {
       justifyContent: 'center',
       alignItems: 'center',
       marginButton: '20px',
-      marginLeft: '250px',
+      marginLeft: '50px',
     },
     link: {
       color: 'rgba(255,255,255, 0.7)',
@@ -54,6 +56,12 @@ const Header = ({ title }) => {
         color: '#f1f1f1',
         cursor: 'pointer',
       },
+    },
+    titles: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     title: {
       color: '#d5f4ff',
@@ -75,7 +83,6 @@ const Header = ({ title }) => {
     <Box sx={headerStyles.wrapper}>
       <Box sx={headerStyles.topRow}>
         <Box>
-          {' '}
           <Typography variant='h6' sx={headerStyles.title}>
             {title}
           </Typography>
