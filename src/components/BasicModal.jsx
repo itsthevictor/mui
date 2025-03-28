@@ -1,5 +1,6 @@
 import { Modal, Typography, Box, TextField, Divider } from '@mui/material';
 import { useState } from 'react';
+import MainButton from './MainButton';
 const style = {
   position: 'absolute',
   top: '50%',
@@ -13,7 +14,7 @@ const style = {
   p: 4,
 };
 
-const BasicModal = ({ open, handleClose }) => {
+const BasicModal = ({ open, handleClose, title, subtitle, content }) => {
   return (
     <Modal
       open={open}
@@ -23,15 +24,14 @@ const BasicModal = ({ open, handleClose }) => {
     >
       <Box sx={style}>
         <Typography id='modal-modal-title' variant='h6' component='h2'>
-          New user
+          {title}
         </Typography>
         <Typography id='modal-modal-description' sx={{ mt: 2, mb: 1 }}>
-          Fill out the inputs and submit
+          {subtitle}
         </Typography>
         <Divider />
-        <Box sx={{ mt: 3, pt: 1 }}>
-          <TextField label='name' />
-        </Box>
+
+        {content}
       </Box>
     </Modal>
   );

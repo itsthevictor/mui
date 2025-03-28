@@ -1,10 +1,10 @@
-import { Grid2, IconButton, Box, Typography } from '@mui/material';
+import { IconButton, Box, Typography } from '@mui/material';
 import BasicCard from '../components/BasicCard';
 import SearchBar from '../components/SearchBar';
 import MainButton from '../components/MainButton';
 import { Refresh, VerticalAlignCenter } from '@mui/icons-material';
 import GridWrapper from '../components/GridWrapper';
-import BasicModal from '../components/BasicModal';
+import NewUserModal from '../components/NewUserModal';
 import { useState } from 'react';
 
 const Auth = () => {
@@ -79,7 +79,7 @@ const Auth = () => {
         sx={{ maxWidth: '720px', marginLeft: 'auto', marginRight: 'auto' }}
         content={getContent()}
       />
-      <BasicModal open={open} handleClose={handleClose} />
+      <NewUserModal open={open} handleClose={handleClose} />
     </GridWrapper>
   );
 };
