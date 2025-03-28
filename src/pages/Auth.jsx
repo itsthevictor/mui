@@ -3,6 +3,7 @@ import BasicCard from '../components/BasicCard';
 import SearchBar from '../components/SearchBar';
 import MainButton from '../components/MainButton';
 import { Refresh, VerticalAlignCenter } from '@mui/icons-material';
+import GridWrapper from '../components/GridWrapper';
 
 const Auth = () => {
   const searchBarStyles = {
@@ -66,13 +67,13 @@ const Auth = () => {
     );
   };
   return (
-    <Grid2 item xs={8}>
+    <GridWrapper>
       <BasicCard
         header={getSearchBar()}
         sx={{ maxWidth: '720px', marginLeft: 'auto', marginRight: 'auto' }}
         content={getContent()}
       />
-    </Grid2>
+    </GridWrapper>
   );
 };
 
