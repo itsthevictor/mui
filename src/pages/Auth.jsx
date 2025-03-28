@@ -4,8 +4,13 @@ import SearchBar from '../components/SearchBar';
 import MainButton from '../components/MainButton';
 import { Refresh, VerticalAlignCenter } from '@mui/icons-material';
 import GridWrapper from '../components/GridWrapper';
+import BasicModal from '../components/BasicModal';
+import { useState } from 'react';
 
 const Auth = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const searchBarStyles = {
     container: {
       display: 'flex',
@@ -58,6 +63,7 @@ const Auth = () => {
             children='add user'
             variant='contained'
             sx={searchBarStyles.button}
+            onClick={handleOpen}
           />
           <IconButton>
             <Refresh />
@@ -73,6 +79,7 @@ const Auth = () => {
         sx={{ maxWidth: '720px', marginLeft: 'auto', marginRight: 'auto' }}
         content={getContent()}
       />
+      <BasicModal open={open} handleClose={handleClose} />
     </GridWrapper>
   );
 };
