@@ -14,7 +14,14 @@ const style = {
   p: 4,
 };
 
-const BasicModal = ({ open, handleClose, title, subtitle, content }) => {
+const BasicModal = ({
+  open,
+  handleClose,
+  title,
+  subtitle,
+  content,
+  onSubmit,
+}) => {
   return (
     <Modal
       open={open}
@@ -32,6 +39,23 @@ const BasicModal = ({ open, handleClose, title, subtitle, content }) => {
         <Divider />
 
         {content}
+        <Box
+          sx={{
+            mt: 4,
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'flex-end',
+            gap: 2,
+          }}
+        >
+          {' '}
+          <MainButton variant='outlined' onClick={handleClose}>
+            cancel
+          </MainButton>
+          <MainButton variant='contained' onClick={onSubmit}>
+            submit
+          </MainButton>
+        </Box>
       </Box>
     </Modal>
   );

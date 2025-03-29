@@ -2,15 +2,22 @@ import { IconButton, Box, Typography } from '@mui/material';
 import BasicCard from '../components/BasicCard';
 import SearchBar from '../components/SearchBar';
 import MainButton from '../components/MainButton';
-import { Refresh, VerticalAlignCenter } from '@mui/icons-material';
+import {
+  InstallMobile,
+  Refresh,
+  VerticalAlignCenter,
+} from '@mui/icons-material';
 import GridWrapper from '../components/GridWrapper';
 import NewUserModal from '../components/NewUserModal';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Auth = () => {
   const [open, setOpen] = useState(false);
+  const [users, setUsers] = useState([]);
+  const [searchResults, setSearchResults] = useState(users);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
   const searchBarStyles = {
     container: {
       display: 'flex',
@@ -27,8 +34,10 @@ const Auth = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      height: '65px',
+      height: 'fit-content',
+      minHeight: '65px',
       color: 'gray',
+      flexDirection: 'column',
     },
     searchBarInput: {
       width: '100%',
@@ -39,16 +48,54 @@ const Auth = () => {
       backgroundColor: '#f5f5f5',
     },
   };
+
+  const addNewUser = (data) => {
+    console.log('users 1', users);
+    // console.log('data', { ...data });
+
+    users.push({ ...data });
+    handleClose();
+  };
+
+  useEffect(() => {
+    getContent();
+  }, [users]);
+
   const getContent = () => {
     return (
       <Box sx={searchBarStyles.content}>
-        <Typography align='center'>No users for this project yet</Typography>
+        {users.length ? (
+          users.map((item, i) => (
+            <Box key={i} sx={{ mb: 2 }}>
+              <Typography>User ID:{item.userId}</Typography>
+              <Typography>Email: {item.email}</Typography>
+              <Typography>Phone Number: {item.phoneNumber}</Typography>
+              {/* <Typography>{item}</Typography> */}
+            </Box>
+          ))
+        ) : (
+          <Typography align='center'>No users for this project yet</Typography>
+        )}
       </Box>
     );
   };
+
   const getSearchBar = () => {
-    const handleChange = (e) => {
-      console.log(e);
+    const handleSearch = (e) => {
+      filterData(e);
+    };
+
+    const filterData = (value) => {
+      const lowerCaseValue = value.toLowerCase().trim();
+      if (lowerCaseValue === '') setUsers(searchResults);
+      else {
+        const filteredData = searchResults.filter((item) => {
+          return Object.keys(item).some((key) =>
+            item[key].toString().toLowerCase().includes(lowerCaseValue)
+          );
+        });
+        setUsers(filteredData);
+      }
     };
 
     return (
@@ -56,7 +103,7 @@ const Auth = () => {
         <SearchBar
           sx={searchBarStyles.searchBarInput}
           placeholder='Caută numele clientului sau denumirea măsurii'
-          onChange={(e) => handleChange(e.target.value)}
+          onChange={(e) => handleSearch(e.target.value)}
         />
         <Box sx={searchBarStyles.actions}>
           <MainButton
@@ -72,6 +119,7 @@ const Auth = () => {
       </Box>
     );
   };
+
   return (
     <GridWrapper>
       <BasicCard
@@ -79,7 +127,11 @@ const Auth = () => {
         sx={{ maxWidth: '720px', marginLeft: 'auto', marginRight: 'auto' }}
         content={getContent()}
       />
-      <NewUserModal open={open} handleClose={handleClose} />
+      <NewUserModal
+        open={open}
+        handleClose={handleClose}
+        addNewUser={addNewUser}
+      />
     </GridWrapper>
   );
 };

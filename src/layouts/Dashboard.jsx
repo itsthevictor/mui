@@ -12,8 +12,6 @@ const Dashboard = () => {
   const location = useLocation();
   useEffect(() => {
     const parsedTitle = location.pathname.replace(/\W/g, '');
-    console.log('parsed', location.pathname);
-
     if (location.pathname === '/') {
       setTitle('tablou');
     } else {
