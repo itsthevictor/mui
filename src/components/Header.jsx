@@ -89,8 +89,8 @@ const Header = ({ title }) => {
         </Box>
         <Box sx={headerStyles.actions}>
           {' '}
-          <Typography sx={headerStyles.link}>go to docs</Typography>
-          <NotificationBell content={menuItems.length} menuItems={menuItems} />
+          {/* <Typography sx={headerStyles.link}>go to docs</Typography>
+          <NotificationBell content={menuItems.length} menuItems={menuItems} /> */}
           <Avatar alt='Travis Howard' src='/2.jpg' />
         </Box>
       </Box>
