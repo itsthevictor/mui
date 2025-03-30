@@ -1,11 +1,8 @@
 import BasicCard from '../components/BasicCard';
+import GridWrapper from '../components/GridWrapper';
 
 const Overview = () => {
-  return (
-    <div>
-      <BasicCard />
-    </div>
-  );
+  return <GridWrapper></GridWrapper>;
 };
 
 export default Overview;
