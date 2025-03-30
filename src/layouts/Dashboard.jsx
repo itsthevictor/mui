@@ -7,7 +7,6 @@ import Header from '../components/Header';
 import { Grid2, Box } from '@mui/material';
 import { useGlobalStore } from '../stores/useGlobalStore';
 const Dashboard = () => {
-  const { pageTitle } = useGlobalStore();
   const [title, setTitle] = useState(null);
   const location = useLocation();
   useEffect(() => {

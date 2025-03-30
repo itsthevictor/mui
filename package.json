@@ -16,7 +16,7 @@
     "@mui/icons-material": "^6.4.9",
     "@mui/material": "^6.4.9",
     "@mui/x-data-grid": "^7.28.2",
-    "material-table": "^1.63.0",
+    "@mui/x-data-grid-generator": "^7.28.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.55.0",

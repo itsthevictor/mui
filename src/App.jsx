@@ -1,8 +1,4 @@
-import {
-  BrowserRouter,
-  createBrowserRouter,
-  RouterProvider,
-} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Overview from './pages/Overview';
 import Dashboard from './layouts/Dashboard';
 import Leads from './pages/Leads';
@@ -12,7 +8,7 @@ import Programmes from './pages/Programmes';
 import Clients from './pages/Clients';
 import Reports from './pages/Reports';
 import Login from './pages/Login';
-import ProtetedRoute from './pages/ProtetedRoute';
+
 import { ThemeProvider } from '@mui/material/styles';
 import { dashboardTheme } from './assets/themes/dashboardTheme';
 import Auth from './pages/Auth';
