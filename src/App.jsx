@@ -10,10 +10,19 @@ import Reports from './pages/Reports';
 import Login from './pages/Login';
 
 import { ThemeProvider } from '@mui/material/styles';
-import { dashboardTheme } from './assets/themes/dashboardTheme';
+import { lightTheme } from './assets/themes/lightTheme';
 import Auth from './pages/Auth';
+import { Paper, CssBaseline } from '@mui/material';
+import { useColorScheme } from '@mui/material/styles';
+import { useGlobalStore } from './stores/useGlobalStore';
+import { darkTheme } from './assets/themes/darkTheme';
 
 function App() {
+  const { mode, setMode } = useColorScheme();
+
+  const { theme } = useGlobalStore();
+  console.log('mode', theme);
+
   const router = createBrowserRouter([
     {
       path: '/',
@@ -53,8 +62,12 @@ function App() {
     },
   ]);
   return (
-    <ThemeProvider theme={dashboardTheme}>
-      <RouterProvider router={router} />
+    <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+      <CssBaseline>
+        <Paper>
+          <RouterProvider router={router} />
+        </Paper>
+      </CssBaseline>
     </ThemeProvider>
   );
 }

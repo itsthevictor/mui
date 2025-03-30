@@ -16,6 +16,7 @@ const Header = ({ title }) => {
   let array = [2134, 23, 423, 42, 34];
   const headerStyles = {
     wrapper: {
+      position: 'fixed',
       width: '100%',
       backgroundColor: '#1a2247',
       color: '#f1f1f1',
@@ -29,7 +30,7 @@ const Header = ({ title }) => {
       justifyContent: 'space-between',
       alignItems: 'center',
       marginButton: '20px',
-      marginLeft: '185px',
+      marginLeft: '165px',
       '*': {
         marginRight: '5px',
       },

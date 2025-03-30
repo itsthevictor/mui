@@ -1,6 +1,10 @@
 import { createTheme } from '@mui/material/styles';
+import { blue, red, green } from '@mui/material/colors';
 
-export const dashboardTheme = createTheme({
+export const lightTheme = createTheme({
+  colorSchemes: {
+    dark: true,
+  },
   components: {
     // Name of the component
     MuiButton: {
@@ -16,8 +20,18 @@ export const dashboardTheme = createTheme({
     },
   },
   palette: {
-    primary: { main: '#3a86ff', navText: '#d5f4ff' },
+    mode: 'light',
+    primary: { main: blue[700], navText: '#d5f4ff' },
+    pageHeading: {
+      main: green[400],
+      superDark: red[900],
+      superLight: red[100],
+    },
+    navbar: {
+      main: blue[700],
+    },
   },
+
   typography: {
     fontFamily: [
       '-apple-system',
@@ -47,5 +61,4 @@ export const dashboardTheme = createTheme({
       letterSpacing: '0.5px',
     },
   },
-  spacing: [4, 8, 12, 16, 28],
 });

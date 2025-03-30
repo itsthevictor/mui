@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import { Outlet, useLocation } from 'react-router-dom';
 
 import Header from '../components/Header';
-import { Grid2, Box } from '@mui/material';
+import { Grid2, Box, Typography } from '@mui/material';
 import { useGlobalStore } from '../stores/useGlobalStore';
 const Dashboard = () => {
   const [title, setTitle] = useState(null);
@@ -20,9 +20,22 @@ const Dashboard = () => {
   return (
     <Grid2>
       <Navbar />
-      <Header title={title} />
-      <Box className='dashboard-page'>
-        <Outlet />
+      <Box>
+        <Header title={title} />
+        <Box
+          sx={{
+            pt: '100px',
+            pl: '180px',
+            pr: '2rem',
+
+            minHeight: '100vh',
+          }}
+        >
+          <Typography sx={{ color: 'pageHeading.main' }} variant='h1'>
+            oiii
+          </Typography>
+          <Outlet />
+        </Box>
       </Box>
     </Grid2>
   );

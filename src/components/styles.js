@@ -4,7 +4,7 @@ export const navbarStyles = {
     flexShrink: 0,
     '& .MuiDrawer-paper': {
       width: 'fit-content',
-      paddingRight: '10px',
+      // pr: '10px',
       boxSizing: 'border-box',
       backgroundColor: '#1a2247',
       color: '#d5f4ff',
